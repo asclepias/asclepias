@@ -1,8 +1,8 @@
 
 
-This case study examimes the role of "style" in the analysis of citations for Tardis.  
+This case study examimes the role of "style" in the analysis of citations for Tardis.  **It is not complete or vetted**
 
-Tardis is
+Tardis is <introduction about the Tardis aggregation of research objects>. 
 
 A tabulation of all the mentions of "tardis" in the literature since September 2018 is given below. 
 The list is a join of two ADS queries:
@@ -39,15 +39,29 @@ We draw attention to three specific mentions of tardis and their outcome with re
 
 ### bibliographic style
 
+The bibliographic style used by an author to prepare a preprint can result in the stripping of the DOI from the metadata the author collected to write a manuscript.
+In the instance of 2019arXiv190803001K the author utilized LaTeX packages that resulted in the stripping of the DOI from their bibtex source file.
+Specifically the authors used the outdated `apj.bst` style file, which treats `@misc` (or any non-article type) in such a way that the DOI is not included in the string version of the reference that appears in the PDF of the manuscript. 
+Without the DOI in the string reference, a bibliographic index such as ADS will find it difficult to match the reference string uniquely to a registered record (there's more to this than that). 
+
+The AAS Journals updated their bibtex style file in 2016 to support DOIs for `@misc` objects. This new style file, `aasjournal.bst` is avaiable . I has a number of other changes, including providing inline anchored strings for DOIs, arXiv, and ASCL identifiers. 
+Stylistically it chooses to render these are fully expressed strings -- in otherwords, we made a choice to add the PID string **in full** in the text rather than anchoring it to related identifying material. 
+This is to ensure that preprints created with our tools had unambigious identifiers. 
 
 ### production style
 
 An author submitted manuscript is converted to a final PDF/XML/HTML research paper through automated parsing of the original manuscript.
 Here we mean that the original form of a manuscript could have many formats: PDF, TeX, XML (or subsets such as DOCX), or HTML. 
 Whatever means is necessary to 
-In other words like the compilation of a LaTeX document, the conversion process by a vendor requires a style that may or may not be updated with an awareness of the new style.
+In other words, as with the compilation of a LaTeX document, the conversion process by a vendor requires a style that may or may not be updated with an awareness of the new style (for software citations).
 
-An example is this arXiv preprint. 
+We think an example is this arXiv preprint for 2019A&A...622A.102M. The preprint (arXiv:) has the DOI for the software citation of tardis (v2.0.2). It is present in all forms of the preprint. It was/was not encoded as bibtex by the authors. 
+
+However the final production version of this article, the DOI for the zenodo citation has been stripped away in the metadata for the article XML as submitted to ADS. Without the ADS in the XML, ADS cannot index the citation and pass it to the Asclepias broker. 
+
+We speculate that the removal of this DOI during the production of this article is a function of **production style** used by the vendors related to EDP Sciences.
+We make this speculation based on the fact that most production vendors transform author manuscripts to XML via . 
+We note that although the entry in the preprint is typed as an article, the final type is "book"
 
 ### transmutation style
 
