@@ -9,6 +9,7 @@ The Stingray code was assigned an [ASCL identifier](http://ascl.net/1608.001) in
 The code has been described in an [arXiv preprint](https://arxiv.org/abs/1901.07681), having two versions posted in January and August 2019. 
 The two arXiv versions roughly correspond to the submitted and accepted version of an [ApJ article](https://doi.org/10.3847/1538-4357/ab258d) that was published in final form in August 2019. 
 
+### ADS Indexing 1: Where to put the preprint
 Stingray has proven instructive for testing many aspects of our Asclepias investigations into the software citation ecosystem. 
 The first instruction has been to improve how ADS indexes and matches the many types of objects in this aggregation. 
 For instance ADS indexed the preprint **arXiv** version of the **ApJ** article (January 2019) and this was matched to the **JOSS** article, which was indexed by ADS (June 2019) instead of the later published **ApJ** article (August 2019).  
@@ -16,12 +17,14 @@ This match precipitated from the requirement of the JOSS+ApJ review process that
 This merge was manually repaired in ADS, and the weighting system for matching **arXiv** preprints with **JOSS** articles modified.
 The initial merge meant that the **JOSS** article initially inherited all citations (and references in) the **arXiv** preprint.
 
+### ADS Indexing 2: Indexing related Zenodo objects
 Second the only indexed *version* of the Software `stingray` in ADS is v0.1.
 This version is indexed because it was cited in the references of the JOSS article. 
 The JOSS article's metadata (in the Atom RSS and in CrossRef metadata) contain relations that point to v0.1.3 (`<archive_doi>https://doi.org/10.5281/zenodo.3242835</archive_doi>` in the RSS feed and `relation": {"references": ["id-type": "doi", "id": "https://doi.org/10.5281/zenodo.3242835",` in the CrossRef metadata).
 Currently, ADS treats this related identifier as a "data link", which is not indexed; 
 we are considering that it should be indexed as an associated work.
 
+### Metadata on Titles and Authors
 Third, we were able to audit the titles and authors listed for the many Stingray objects. 
 Tabulations of the authors and titles are given below. 
 One possible inference is that objects that have undergone curation (e.g., peer-review, e.g., managing/production editor review) have authorship and titles that have converged (notwithstanding letter case that may result from Journal style).
@@ -55,20 +58,24 @@ Zenodo v0.1.3 | Jun 2019 | stingray: A modern Python library for spectral timing
 JOSS article | Jun 2019 | stingray: A modern Python library for spectral timing | 
 ApJ article | Aug 2019 | Stingray: A Modern Python Library for Spectral Timing | Title case from Journal style?
 
+
+### Links or Relations between objects
 The fourth exercise we were able to undertake using Stingray is a review of the types of "links" between these research objects.
 These links are itemized in the Table below.
 They are varied in origin, syntax, and directionality. 
 Some of the relationships are absorbed directly (or created) by ADS, and expressed in their user interface and API results.
 These exposed relationships include **arXiv** to **ApJ** article and **ASCL** to **ApJ** article, as well as any citation-type relationship, e.g., **JOSS** citing **Zenodo**.
+We note that in this instance the **arXiv** to **ApJ** link is inferred by ADS; it need not be. 
+Such links could be created by the author at arXiv, or captured by the AAS Journals when the manuscript is accepted and expressed through metadata to CrossRef (*"hasPreprint"*).
+
 Relationships that exist but are not exposed in ADS include **Zenodo** to **Zenodo** DOI versions and **Zenodo** (or **ASCL**) to **GitHub** links.
 Note that the link between the **JOSS** article and the **Zenodo** software object is currently exposed as a ''data link'' rather than as an ''Associated Work'' in ADS.
-Relationships that *should* exist but are not explicit and cannot be expressed include **JOSS** to **ApJ** relation (either via citation or other informative predicate), nor **ApJ** to **Zenodo** via direct software citation. 
-Citations between these objects could be enforced as a matter of editorial policy; informative relations, e.g., that a non-citation relation exists between the parallal peer-review done by **JOSS** and **ApJ** could be added via CrossRef metadata. 
+One question is if relations such as theses should be discovered and indexed by ADS, exposing them to the reader as additional associated works. 
+This gives the benefit of discovering codebases or code versions via ADS, yet adds significant complexity to the ADS system.
 
-One further topic falls out of this linking review: associated works in ADS (or why citation doesn't tell you much of anything). 
-This section is incomplete. 
-It should describe factually the state of relationships expressed in ADS.
-Avoid diatribes on semantics, etc. 
+Relationships that *should* exist but are not explicit and cannot be expressed include **JOSS** to **ApJ** relation (either via citation or other informative predicate), nor **ApJ** to **Zenodo** via direct software citation. 
+Citations between these objects could be enforced as a matter of editorial policy; informative relations, e.g., that a non-citation relation exists between the parallal peer-review done by **JOSS** and **ApJ** could be added via CrossRef metadata (*"relates"*). 
+The final **ApJ** article probably should have cited the "final" **Zenodo** object (v0.1.3), fulfilling part of the AAS Journal's software policy which states that, [*"Ideally, both forms of citation should be included"*](https://journals.aas.org/policy-statement-on-software/).  
 
 
 **Linking Table**
@@ -89,3 +96,11 @@ Zenodo => Github | "IsSupplementTo" | Yes | Datacite; all versions [example](htt
 Zenodo => arXiv | "IsSupplementTo" | Yes | DataCite; v0.1.2, [v0.1.3](https://api.datacite.org/dois/application/vnd.datacite.datacite+json/10.5281/zenodo.3242835)
 Version DOI => Concept DOI | "IsVersionOf" | Yes | DataCite; all versions, e.g. [v0.1.2](https://api.datacite.org/dois/application/vnd.datacite.datacite+json/10.5281/zenodo.3242829)
 Concept DOI => Version DOI | "HasVersion" | Yes | [DataCite](https://api.datacite.org/dois/application/vnd.datacite.datacite+json/10.5281/zenodo.1490116)
+
+### Discussion
+
+One further topic falls out of this linking review: associated works in ADS (or why citation doesn't tell you much of anything). 
+This section is incomplete. 
+It should describe factually the state of relationships expressed in ADS.
+Avoid diatribes on semantics, etc. 
+
