@@ -4,10 +4,10 @@ This aggregation includes
 a [GitHub repository](https://github.com/StingraySoftware/stingray) created in October 2015 and
 five tagged GitHub [releases](https://github.com/StingraySoftware/stingray/releases) with the first issued in February 2018. 
 The authors submitted a [code article](https://doi.org/10.21105/joss.01393) to JOSS in April 2019 and after [its review](https://github.com/openjournals/joss-reviews/issues/1393) was accepted in June 2019.
-There are also [four archived Zenodo versions](https://doi.org/10.5281/zenodo.1490116) (plus a Concept DOI that currently points to the latest release, [v0.1.3](https://doi.org/10.5281/zenodo.3242835)).
+There are also [five archived Zenodo versions](https://doi.org/10.5281/zenodo.1490116) (plus a Concept DOI that currently points to the latest release, [v0.1.3](https://doi.org/10.5281/zenodo.3242835)).
 The Stingray code was assigned an [ASCL identifier](http://ascl.net/1608.001) in August 2016.
-The code has been described in an [arXiv preprint](https://arxiv.org/abs/1901.07681), having two versions posted in January and August 2019, 
-and a corresponding [ApJ article](https://doi.org/10.3847/1538-4357/ab258d) published in August 2019. 
+The code has been described in an [arXiv preprint](https://arxiv.org/abs/1901.07681), having two versions posted in January and August 2019. 
+The two arXiv versions roughly correspond to the submitted and accepted version of an [ApJ article](https://doi.org/10.3847/1538-4357/ab258d) that was published in final form in August 2019. 
 
 Stingray has proven instructive for testing many aspects of our Asclepias investigations into the software citation ecosystem. 
 The first instruction has been to improve how ADS indexes and matches the many types of objects in this aggregation. 
@@ -27,16 +27,19 @@ Tabulations of the authors and titles are given below.
 One possible inference is that objects that have undergone curation (e.g., peer-review, e.g., managing/production editor review) have authorship and titles that have converged (notwithstanding letter case that may result from Journal style).
 
 
-**Authorship Table**
+**PID and Authorship Table**
 
-| Entry  | Date |  Authors | Comments |
-| ----------- | :------: | :---: | -------------------|
-ASCL.net | Aug 2016 | [5](https://web.archive.org/web/20190925160413/http://ascl.net/1608.001) | Code entry last updated [2019-08-27](http://ascl.net/phpBB3/viewtopic.php?t=34066)
-arXiv | Jan 2019 | [12](https://arxiv.org/abs/1901.07681) | v1==v2; versions roughly submitted & accepted to ApJ
-Zenodo v0.1 | June 2019 | [27](https://doi.org/10.5281/zenodo.3239519) | 0 ORCIDs
-Zenodo v0.1.3 | June 2019 | [12](https://doi.org/10.5281/zenodo.3242835) | 3 ORCIDs; at close of JOSS review
-JOSS article | June 2019 | [12](https://doi.org/10.5281/zenodo.3242835) | 3 ORCIDs
-ApJ article | August 2019 | [12](https://doi.org/10.3847/1538-4357/ab258d) | 4 ORCIDs; accepted May 2019
+| Entry  | PID | Date |  Authors | Comments |
+| ----------- | --- | :------: | :---: | -------------------|
+ASCL.net | ascl:1608.001 | Aug 2016 | [5](https://web.archive.org/web/20190925160413/http://ascl.net/1608.001) | Code entry last updated [2019-08-27](http://ascl.net/phpBB3/viewtopic.php?t=34066)
+Zenodo test_release | doi:10.5281/zenodo.1490117 | Nov 2018 | [24](https://doi.org/10.5281/zenodo.1490117) | Concept DOI:10.5281/zenodo.1490116 
+arXiv | arXiv:1901.07681 | Jan 2019 | [12](https://arxiv.org/abs/1901.07681) | v1==v2; ~sameAs submitted & accepted to ApJ
+Zenodo v0.1 | doi:10.5281/zenodo.3239519 | Jun 2019 | [27](https://doi.org/10.5281/zenodo.3239519) | 0 ORCIDs
+Zenodo v0.1.1 | doi:10.5281/zenodo.3242825 | Jun 2019 | [28](https://doi.org/10.5281/zenodo.3242825) | 0 ORCIDs; JOSS submission
+Zenodo v0.1.2 | doi:10.5281/zenodo.3242829 | Jun 2019 | [12](https://doi.org/10.5281/zenodo.3242829) | 3 ORCIDs
+Zenodo v0.1.3 | doi:10.5281/zenodo.3242835 | Jun 2019 | [12](https://doi.org/10.5281/zenodo.3242835) | 3 ORCIDs; at close of JOSS review
+JOSS article | doi:10.21105/joss.01393 | Jun 2019 | [12](https://doi.org/10.21105/joss.01393) | 3 ORCIDs
+ApJ article | doi:10.3847/1538-4357/ab258d | Aug 2019 | [12](https://doi.org/10.3847/1538-4357/ab258d) | 4 ORCIDs; accepted May 2019
 
 **Title Table**
 
@@ -45,12 +48,12 @@ ApJ article | August 2019 | [12](https://doi.org/10.3847/1538-4357/ab258d) | 4 O
 ASCL.net | Aug 2016 | Stingray: Spectral-timing software | Code entry last updated [2019-08-27](http://ascl.net/phpBB3/viewtopic.php?t=34066)
 Zenodo "test_release" | Nov 2018 | StingraySoftware/stingray: this is a test | first Zenodo indexed name
 arXiv | Jan 2019 | Stingray: A Modern Python Library For Spectral Timing | v1==v2
-Zenodo v0.1 | June 2019 | StingraySoftware/stingray: Version 0.1 | 
-Zenodo v0.1.1 | June 2019 | StingraySoftware/stingray: JOSS paper | 
-Zenodo v0.1.2 | June 2019 | stingray: A modern Python library for spectral timing | 
-Zenodo v0.1.3 | June 2019 | stingray: A modern Python library for spectral timing | 
-JOSS article | June 2019 | stingray: A modern Python library for spectral timing | 
-ApJ article | August 2019 | Stingray: A Modern Python Library for Spectral Timing | Title case from Journal style?
+Zenodo v0.1 | Jun 2019 | StingraySoftware/stingray: Version 0.1 | 
+Zenodo v0.1.1 | Jun 2019 | StingraySoftware/stingray: JOSS paper | 
+Zenodo v0.1.2 | Jun 2019 | stingray: A modern Python library for spectral timing | 
+Zenodo v0.1.3 | Jun 2019 | stingray: A modern Python library for spectral timing | 
+JOSS article | Jun 2019 | stingray: A modern Python library for spectral timing | 
+ApJ article | Aug 2019 | Stingray: A Modern Python Library for Spectral Timing | Title case from Journal style?
 
 The fourth exercise we were able to undertake using Stingray is a review of the types of "links" between these research objects.
 These links are itemized in the Table below.
