@@ -60,21 +60,24 @@ ApJ article | Aug 2019 | Stingray: A Modern Python Library for Spectral Timing |
 
 
 ### Links or Relations between objects
-The fourth exercise we were able to undertake using Stingray is a review of the types of "links" between these research objects.
+The fourth exercise we were able to undertake using Stingray is a review of the types of "links" or relations between these research objects.
 These links are itemized in the Table below.
 They are varied in origin, syntax, and directionality. 
+Note that the relation types ("predicates") either come from the source itself, e.g., "Described in" is the ASCL term or from the metadata schema of the article, e.g., "hasPreprint" is from CrossRef. 
+Finally, citations in the reference section of an article use the predicate "cites", while a relationship between associated work uses "references."
+
 Some of the relationships are absorbed directly (or created) by ADS, and expressed in their user interface and API results.
 These exposed relationships include **arXiv** to **ApJ** article and **ASCL** to **ApJ** article, as well as any citation-type relationship, e.g., **JOSS** citing **Zenodo**.
 We note that in this instance the **arXiv** to **ApJ** link is inferred by ADS; it need not be. 
-Such links could be created by the author at arXiv, or captured by the AAS Journals when the manuscript is accepted and expressed through metadata to CrossRef (*"hasPreprint"*).
+Such a link could be created [by the author in arXiv](https://arxiv.org/help/jref), or captured by the AAS Journals when the manuscript is accepted and expressed through metadata to CrossRef (*"hasPreprint"*).
 
 Relationships that exist but are not exposed in ADS include **Zenodo** to **Zenodo** DOI versions and **Zenodo** (or **ASCL**) to **GitHub** links.
 Note that the link between the **JOSS** article and the **Zenodo** software object is currently exposed as a ''data link'' rather than as an ''Associated Work'' in ADS.
-One question is if relations such as theses should be discovered and indexed by ADS, exposing them to the reader as additional associated works. 
+One question we have is if relations such as these should be discovered and indexed (ingested into) by ADS, exposing them to the reader as additional associated works in the ADS UI. 
 This gives the benefit of discovering codebases or code versions via ADS, yet adds significant complexity to the ADS system.
 
 Relationships that *should* exist but are not explicit and cannot be expressed include **JOSS** to **ApJ** relation (either via citation or other informative predicate), nor **ApJ** to **Zenodo** via direct software citation. 
-Citations between these objects could be enforced as a matter of editorial policy; informative relations, e.g., that a non-citation relation exists between the parallal peer-review done by **JOSS** and **ApJ** could be added via CrossRef metadata (*"relates"*). 
+Citations between these objects could be enforced as a matter of editorial policy; informative relations, e.g., that a non-citation relation exists between the parallal peer-review done by **JOSS** and **ApJ** could be added via CrossRef metadata ([*"references"* or maybe *"hasRelatedMaterial"*](https://support.crossref.org/hc/en-us/articles/214357426-Relationships-between-DOIs-and-other-objects)). 
 The final **ApJ** article probably should have cited the "final" **Zenodo** object (v0.1.3), fulfilling part of the AAS Journal's software policy which states that, [*"Ideally, both forms of citation should be included"*](https://journals.aas.org/policy-statement-on-software/).  
 
 
@@ -83,12 +86,12 @@ The final **ApJ** article probably should have cited the "final" **Zenodo** obje
 Relationship | Predicate | Exists? | Comments 
 --- | :-: | :-: | ---
 JOSS => Zenodo v0.1 | "cites" | Yes | In [CrossRef](https://api.crossref.org/v1/works/10.21105/joss.01393)
-JOSS => Zenodo v0.1.3 | "related" | Yes | In [CrossRef](https://api.crossref.org/v1/works/10.21105/joss.01393)
-arXiv => ApJ | "DOI" | Yes | magic
+JOSS => Zenodo v0.1.3 | "references" | Yes | In [CrossRef](https://api.crossref.org/v1/works/10.21105/joss.01393)
+arXiv => ApJ | "DOI" | Yes | *magic* 
 ApJ => arXiv | "hasPreprint" | No | *AAS could collect & IOP could export*
 ApJ => Zenodo | "cites" | No | *but should it?!?*
 JOSS <=> ApJ | "cites" | No | *Not required*
-JOSS <=> ApJ | "related" | No | *but there's branding* 
+JOSS <=> ApJ | "references" | No | *but there's branding* 
 ASCL => GitHub | "Code site" | Yes | Only on [ASCL](https://web.archive.org/web/20190925160413/http://ascl.net/1608.001)
 ASCL => ApJ | "Described in" | Yes | [ADS Associated Work](https://ui.adsabs.harvard.edu/abs/2019ApJ...881...39H/abstract)
 ASCL => ApJ | "Preferred citation" | Yes | Only on [ASCL](https://web.archive.org/web/20190925160413/http://ascl.net/1608.001)
@@ -99,8 +102,8 @@ Concept DOI => Version DOI | "HasVersion" | Yes | [DataCite](https://api.datacit
 
 ### Discussion
 
-One further topic falls out of this linking review: associated works in ADS (or why citation doesn't tell you much of anything). 
-This section is incomplete. 
-It should describe factually the state of relationships expressed in ADS.
-Avoid diatribes on semantics, etc. 
+ * The role of curation in the creation of these research objects
+ * Who creates what to which link when and how?
+ * Associated works in ADS's UI
+
 
